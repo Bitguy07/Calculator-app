@@ -1,0 +1,12 @@
+.slide{
+    transform : translateX(0px);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 800ms;
+}
+.smooth{
+    transform: translateX(100%);
+}
+
+.block{
+    display: block;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+<body class="bg-white w-screen relative h-screen overflow-hidden text-white">
+
+    <div class="w-full h-full relative overflow-hidden flex ">
+        <div class="sm:w-2/3 w-full">
+            <div class="h-full flex flex-col">
+                <!-- First Section: 25% Height -->
+                <div class="sm:h-1/3 h-1/2 relative flex items-center bg-black sm:rounded-none rounded-xl justify-center">
+                    <div class="h-full relative w-full">
+                        <div class="sm:hidden absolute right-5 top-5"><button id="button" ><img src="assets/Histroy.png" alt="Histroy" class="h-6 w-6"></button></div>
+                        <div class="font-light text-white absolute   sm:m-4 mb-4 mr-8 bottom-0 right-0 sm:pr-3 text-right text-3xl">
+                            <p class="pb-3" id="Calculation"></p>
+                            <p class="pb-3 hidden" id="Calculation1"></p>
+                            <p class="pb-3 hidden" id="hide"></p>
+                            <p class="pb-3 hidden" id="hide1"></p>
+                            <p class="pb-3 hidden" id="hide2"></p>
+                            <p id="Result"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Second Section: 75% Height -->
+                <div class="sm:h-2/3 h-1/2 relative flex items-center justify-center">
+                    <!-- Calculator Buttons -->
+                    <div class="h-full w-full ">
+
+                        <div class="h-full w-full p-1 sm:px-6 sm:pb-6 sm:bg-gray-500 bg-gray-400 rounded-xl sm:rounded-none">
+                            
+                            <!-- Extra Oprater Button -->
+                            <div class="w-full h-2 text-center font-bold relative" ><span id="Extra_Oprater_Button" class="relative -top-3 cursor-pointer	 " >===</span></div>
+
+                            <!-- Extra Oprater -->
+                            <div id="Extra_Oprater" class="grid h-0 transition-all duration-1000 hidden w-full sm:gap-2 pb-1 sm:mb-2 gap-2 text-3xl grid-cols-4">
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="(" id="(" class="w-full rounded-xl h-full ">(</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button id="squre" class="w-full rounded-xl h-full ">x<sup>2</sup></button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="√" id="root" class="w-full rounded-xl h-full ">&#8730</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button  value=")" id=")" class="w-full rounded-xl h-full ">)</button></div>
+                            </div>
+
+                            <div id="temp" class="grid h-full w-full sm:gap-2 gap-1 text-3xl grid-cols-4">
+                                
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="9" id="9"  class="w-full rounded-xl h-full ">9</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="8" id="8" class="w-full rounded-xl h-full ">8</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="7" id="7" class="w-full rounded-xl h-full ">7</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value=&#xF7 id="/" class="w-full rounded-xl h-full ">&#xF7</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="6" id="6" class="w-full rounded-xl h-full ">6</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="5" id="5" class="w-full rounded-xl h-full ">5</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="4" id="4" class="w-full rounded-xl h-full ">4</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="&#xd7" id="*" class="w-full rounded-xl h-full ">&#xd7</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="3" id="3" class="w-full rounded-xl h-full ">3</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="2" id="2" class="w-full rounded-xl h-full ">2</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="1" id="1" class="w-full rounded-xl h-full ">1</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="&#43" id="+" class="w-full rounded-xl h-full ">&#43</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="." id="Decimal" class="w-full rounded-xl h-full ">.</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="0" id="0" class="w-full rounded-xl h-full ">0</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button id="Calculate" class="w-full rounded-xl h-full ">=</button></div>
+                                <div class=" border-2 rounded-xl bg-gray-600"><button value="&#45" id="-" class="w-full rounded-xl h-full ">&#x2212</button></div>                                
+                                <div class=" border-2 rounded-xl col-start-2 bg-gray-600 "><button id="Back" class="w-full rounded-xl flex items-center justify-center text-white h-full "><svg xmlns="http://www.w3.org/2000/svg" height="24px" class="" viewBox="0 -960 960 960" width="24px" fill="#f6f7f7"><path d="m456-320 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 160q-19 0-36-8.5T296-192L80-480l216-288q11-15 28-23.5t36-8.5h440q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H360ZM180-480l180 240h440v-480H360L180-480Zm400 0Z"/></svg></button></div>
+                                <div class=" border-2 rounded-xl col-start-3 bg-red-700"><button id="Clear" class="w-full rounded-xl h-full ">C</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Histroy Pannel -->
+        <div id="slider" class="sm:w-1/3 absolute sm:relative right-0 sm:translate-x-0  z-10 w-72 sm:block bg-gray-200 h-full text-center">
+            <div class=" flex justify-between w-full bg-gray-400 h-16 font-semibold text-black border-b-4 border-black text-2xl ">
+                <p class="text-left pt-4 pl-3 md:pl-10">Histroy</p>
+                <div class="pt-5 pr-3 md:pr-6"><button id="button_1" ><img src="assets/waste.png" alt="Histroy" class="h-7 w-7"></button></div>
+            </div>
+            <div id="HistroyPanel" class="h-full w-full space-y-2 mt-3 overflow-y-auto ">
+                <!-- Histroy -->
+            </div>
+        </div>
+        <div id="blur" class="fixed sm:hidden inset-0 bg-gray-600 bg-opacity-50 backdrop-blur-sm hidden"></div>
+    </div>
+    <script src="javascript.js"></script>
+
+</body>
+</html>
